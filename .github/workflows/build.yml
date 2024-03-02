@@ -29,7 +29,7 @@ env:
 jobs:
   configuration:
     name: Setup configuration
-    runs-on: self-hosted
+    runs-on: macos-latest
     outputs:
       runner: ${{ steps.checker.outputs.runners }}
       github-runner: ${{ steps.checker.outputs.github-runner }}
@@ -274,7 +274,7 @@ jobs:
           asset_content_type: application/octet-stream
   dispatch-ios:
     name: Dispatch (iOS)
-    runs-on: self-hosted
+    runs-on: macos-latest
     needs: package-ios
     if: github.event_name == 'release'
     steps:
